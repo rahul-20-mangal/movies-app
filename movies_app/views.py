@@ -23,3 +23,12 @@ def genre_list(request):
         'genre_list': genre_list 
     }
     return render(request, 'movies_app/genre_list.html', context=context)
+
+
+def genre_detail(request, slug):
+    genre = get_object_or_404(Genre, slug=slug)
+
+    context = {
+        'genre': genre
+    }
+    return render(request, 'movies_app/genre_detail.html', context=context)

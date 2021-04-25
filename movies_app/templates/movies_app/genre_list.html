@@ -11,7 +11,7 @@
         {% for genre in genre_list %}
         <tr>
             <td>{{ genre }}</td>
-            <td><a href="#"><button class="btn btn-success">Detail</button></a></td>
+            <td><a href="{% url 'genres:detail' slug=genre.slug %}"><button class="btn btn-success">Detail</button></a></td>
         </tr>
         {% endfor %}
     </table>
