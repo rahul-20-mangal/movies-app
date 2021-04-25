@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Movie Details</h1>
+    <p><b>Title: </b>{{ movie.title }}</p>
+    <p><b>Prefix: </b>{{ movie.prefix }}</p>
+    <p><b>Subtitle: </b>{{ movie.subtitle }}</p>
+
+    <p><b>Directors: </b></p>
+    <ul>
+        {% for director in movie.directors.all %}
+            <li>{{ director }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><b>Studio: </b>{{movie.studio}}</p>
+    <p><b>Released Date: </b>{{ movie.released_date }}</p>
+    
+    <p><b>Cover Image: </b><img src="http://127.0.0.1:8000/media/{{ movie.image }}" alt="image" height="200px" width="200px"></p>
+    
+    <p><b>Genre: </b></p>
+    <ul>
+        {% for genre in movie.genre.all %}
+            <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><b>Amazon Url: </b><a href="{{ movie.amazon_url }}">{{ movie.amazon_url }}</a></p>
+
+</div>
+
+{% endblock %}
