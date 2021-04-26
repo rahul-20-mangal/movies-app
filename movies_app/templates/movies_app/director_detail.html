@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Director Details</h1>
+    <p><b>Name: </b>{{ director.first_name }} {{ director.middle_name }} {{ director.last_name }}</p>
+    <p><b>Phone Number: </b>{{ director.phone_number }}</p>
+
+    {% if director.birth_date is not NULL %}
+        <p><b>Birth Date: </b>{{ director.birth_date }}</p>
+    {% endif %}
+
+    {% if director.website is not NULL %}
+        <p><b>Website: </b><a href="{{ director.website }}">{{ director.website }}</a></p>
+    {% endif %}
+
+    <p><b>Gender: </b>
+        {% if director.gender == "M" %}
+            Male
+        {% else %}
+            Female
+        {% endif %}
+    </p>
+</div>
+
+{% endblock %}

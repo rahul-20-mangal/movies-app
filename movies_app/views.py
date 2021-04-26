@@ -44,3 +44,7 @@ class StudioDetailView(DetailView):
 
 class DirectorListView(ListView):
     model = Director
+
+
+class DirectorDetailView(DetailView):
+    model = Director

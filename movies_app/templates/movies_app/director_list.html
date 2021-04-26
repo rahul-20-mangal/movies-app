@@ -11,7 +11,7 @@
         {% for director in director_list %}
         <tr>
             <td>{{ director.first_name }} {{ director.middle_name }} {{ director.last_name }} </td>
-            <td><a href="#"><button class="btn btn-success">Detail</button></a></td>
+            <td><a href="{% url 'directors:detail' pk=director.pk %}"><button class="btn btn-success">Detail</button></a></td>
         </tr>
         {% endfor %}
     </table>
