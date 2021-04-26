@@ -21,6 +21,17 @@
     
     <p><b>Cover Image: </b><img src="http://127.0.0.1:8000/media/{{ movie.image }}" alt="image" height="200px" width="200px"></p>
     
+    <p><b>Reviews: </b></p>
+    {% if movie.review_set.count == 0 %}
+        <p>There are no reviews </p>
+    {% else %}
+        <ul>
+            {% for review in movie.review_set.all %}
+                <li>{{ review.review }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     <p><b>Genre: </b></p>
     <ul>
         {% for genre in movie.genre.all %}
