@@ -36,3 +36,7 @@ def genre_detail(request, slug):
 
 class StudioListView(ListView):
     model = Studio
+
+
+class StudioDetailView(DetailView):
+    model = Studio

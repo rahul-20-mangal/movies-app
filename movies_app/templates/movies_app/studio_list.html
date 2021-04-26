@@ -13,7 +13,7 @@
         <tr>
             <td>{{ studio.title }}</td>
             <td><a href="{{ studio.website }}">{{ studio.website }}</a></td>
-            <td><a href="#"><button class="btn btn-success">Detail</button></a></td>
+            <td><a href="{% url 'studios:detail' slug=studio.slug %}"><button class="btn btn-success">Detail</button></a></td>
         </tr>
         {% endfor %}
     </table>
