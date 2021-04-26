@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
-from .models import Movie, Genre
+from .models import Movie, Genre, Studio
 
 
 class MovieListView(ListView):
@@ -32,3 +32,7 @@ def genre_detail(request, slug):
         'genre': genre
     }
     return render(request, 'movies_app/genre_detail.html', context=context)
+
+
+class StudioListView(ListView):
+    model = Studio
