@@ -19,7 +19,7 @@
     <p><b>Studio: </b>{{movie.studio}}</p>
     <p><b>Released Date: </b>{{ movie.released_date }}</p>
     
-    <p><b>Cover Image: </b><img src="http://127.0.0.1:8000/media/{{ movie.image }}" alt="image" height="200px" width="200px"></p>
+    <p><b>Cover Image: </b><img src="{{ movie.image.url }}" alt="image" height="200px" width="200px"></p>
     
     <p><b>Reviews: </b></p>
     {% if movie.review_set.count == 0 %}
